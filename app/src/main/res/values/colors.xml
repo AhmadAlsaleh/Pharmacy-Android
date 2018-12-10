@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#004EFF</color>
-    <color name="colorPrimaryDark">#004EFF</color>
+    <color name="colorPrimary">#FD0000</color>
+    <color name="colorPrimaryDark">#FD0000</color>
     <color name="colorAccent">#FD0000</color>
 
     <color name="hideAccent">#82fd0000</color>
@@ -9,5 +9,6 @@
     <color name="hideWhite">#dcffffff</color>
     <color name="dustYellow">#FFD700</color>
     <color name="dustYellowLight">#7dffd700</color>
+    <color name="lightGray">#f5f5f5</color>
 
 </resources>

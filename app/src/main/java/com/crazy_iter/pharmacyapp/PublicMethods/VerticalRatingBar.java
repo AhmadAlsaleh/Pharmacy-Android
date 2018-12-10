@@ -1,4 +1,4 @@
-package com.crazy_iter.pharmacyapp;
+package com.crazy_iter.pharmacyapp.PublicMethods;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

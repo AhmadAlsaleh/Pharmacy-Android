@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainMapsActivity"
-    android:fitsSystemWindows="true">
+    tools:context=".MainMapsActivity">
 
     <fragment
         android:id="@+id/map"
@@ -14,6 +13,7 @@
         android:layout_height="match_parent" />
 
     <LinearLayout
+        android:id="@+id/actionsLL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -49,21 +49,93 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/adLL"
+        android:layout_toEndOf="@id/actionsLL"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="* Click on Pharmacy to get more Details"
-        android:background="@android:color/white"
-        android:textColor="@color/colorPrimary"
-        android:textSize="16dp"
-        android:padding="5dp"/>
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        android:background="@drawable/background_radius"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/adIV"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:src="@drawable/pharmacy_logo"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/adTV"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="New Vita D now in #1 Pharmacy"
+            android:textColor="@color/colorAccent"
+            android:textSize="16dp"
+            android:padding="5dp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/addRemoveIV"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/ic_remove_circle"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/hideBlack">
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* Click on Pharmacy to get more Details"
+            android:background="@android:color/white"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp"
+            android:padding="5dp"/>
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    app:srcCompat="@drawable/ic_add_circle"
+                    android:padding="10dp"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize" />
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/mainTB"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:titleTextColor="@color/colorAccent" />
+
+            </LinearLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pharmacyPreviewLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -71,16 +143,18 @@
             android:layout_weight="0.5" />
 
         <LinearLayout
+            android:id="@+id/pharmacyPreviewDataLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="10dp"
+            android:visibility="gone"
             android:background="@drawable/ic_card_background_primary_top">
 
             <ScrollView
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -115,6 +189,103 @@
                         android:textSize="16dp"
                         android:gravity="center"/>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="More Description Text"
+                        android:textSize="18dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="start"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/ic_time"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sun - Fri : 09:00 - 13:00"
+                            android:textSize="18dp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pharmacyPreviewLocationLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/ic_location"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lattakia - 8 Azzar"
+                            android:textSize="18dp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pharmacyPreviewCallLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/ic_call"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0951784957"
+                            android:textSize="18dp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pharmacyPreviewEmailLL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/ic_email"
+                            android:layout_margin="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="alsaleh.a.ahmad@gmail.com"
+                            android:textSize="18dp"
+                            android:textColor="@color/colorAccent"/>
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </ScrollView>
@@ -123,9 +294,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_gravity="center"
                 android:gravity="center">
 
-                <com.crazy_iter.pharmacyapp.VerticalRatingBar
+                <com.crazy_iter.pharmacyapp.PublicMethods.VerticalRatingBar
                     android:id="@+id/mainRB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -141,15 +313,23 @@
         android:id="@+id/mainLogoRL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="@drawable/ic_card_background_primary_circle">
+        android:layout_centerInParent="true">
 
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:layout_margin="15dp"
+            android:padding="15dp"
+            android:background="@drawable/ic_card_background_primary_circle"
             android:src="@drawable/pharmacy_logo"/>
+
+        <ProgressBar
+            android:layout_below="@id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"/>
 
     </RelativeLayout>
 

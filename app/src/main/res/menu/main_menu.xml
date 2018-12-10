@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/itemAll"
+        android:title="All Pharmacies" />
+
+    <item android:id="@+id/itemOpened"
+        android:title="Opened Now" />
+
+    <item android:id="@+id/itemWeekend"
+        android:title="Opened in Weekend" />
+
+    <item android:id="@+id/itemNearby"
+        android:title="Nearby Pharmacies" />
+
+</menu>

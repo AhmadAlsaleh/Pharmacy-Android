@@ -72,7 +72,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/home/ahmad/Downloads/android-studio-ide-173.4907809-linux/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_call_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/ahmad/Downloads/android-studio-ide-173.4907809-linux/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_cake_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -82,12 +82,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="autoMirrored" value="true" />
-                            <entry key="height" value="512" />
-                            <entry key="outputName" value="ic_call" />
-                            <entry key="overrideSize" value="true" />
+                            <entry key="outputName" value="ic_cake" />
                             <entry key="sourceFile" value="$PROJECT_DIR$/../../iconfinder_Sport__Sport_Box_Medical_Medicine_Healthcare__3873131.svg" />
-                            <entry key="width" value="512" />
                           </map>
                         </option>
                       </PersistentState>
